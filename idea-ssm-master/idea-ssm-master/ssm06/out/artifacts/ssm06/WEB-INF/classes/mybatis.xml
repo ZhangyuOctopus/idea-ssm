@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+     <environments default="mysql">
+         <environment id="mysql">
+             <transactionManager type="JDBC"></transactionManager>
+             <dataSource type="POOLED">
+                 <property name="driver" value="com.mysql.jdbc.Driver"/>
+                 <!--注意下面的mysql后面需要加上冒号-->
+                 <property name="url" value="jdbc:mysql://localhost:3306/ssm"/>
+                 <property name="username" value="root"/>
+                 <property name="password" value="root"/>
+             </dataSource>
+         </environment>
+     </environments>
+
+     <!--引入配置文件-->
+     <mappers>
+         <!--假如写的是配置文件那么应该写上<mapper resource="com.ssm.mapper"></mapper>-->
+         <!--<mapper class="AccountDao"></mapper>-->
+         <!--可以写上包名-->
+         <package name="com.ssm.dao"/>
+     </mappers>
+</configuration>
